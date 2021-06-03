@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <functional>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+
+int main(){
+
+	srand(time(NULL));
+	// current date/time based on current system
+		time_t now = time(0);
+		// convert now to string form
+		char* dt = ctime(&now);
+		cout << "The time is: " << now << endl;
+
+    string s = "Spring is around the corner.";
+
+    //hash function
+    hash<std::string> hash_fn;
+    size_t hash = hash_fn(s + dt);
+    std::cout << "The Hash is: " << hash  << endl;
+
+}
